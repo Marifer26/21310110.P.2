@@ -1,1 +1,22 @@
+# Definimos el grafo como un diccionario
+grafo = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E'],
+}
+
+visitado = set()  # Conjunto para almacenar los nodos visitados
+
+def dfs(visitado, grafo, nodo):
+    if nodo not in visitado:
+        print (nodo)
+        visitado.add(nodo)
+        for vecino in grafo[nodo]:
+            dfs(visitado, grafo, vecino)
+
+# Llamamos a la función con el nodo inicial 'A'
+dfs(visitado, grafo, 'A')
 
