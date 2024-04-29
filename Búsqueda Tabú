@@ -27,21 +27,21 @@ cola = []
 origen = input("Ingresa el nodo origen: ")
 print("\nLista de recorrido en anchura:\n")
 
-# Paso 1: Colocamos el vértice origen en una cola
+# Colocamos el vértice origen en una cola
 cola.append(origen)
 
-# Paso 2: Mientras la cola no esté vacía
+#  Mientras la cola no esté vacía
 while cola:
-    # Paso 3: Desencolamos un vértice, este será ahora el vértice actual
+    # Desencolamos un vértice, este será ahora el vértice actual
     actual = cola.pop(0)
 
-    # Paso 4: Si el vértice actual no ha sido visitado
+    # Si el vértice actual no ha sido visitado
     if actual not in visitados:
-        # Paso 5: Procesamos (imprimimos) el vértice actual
+        # Procesamos (imprimimos) el vértice actual
         print("Vertice actual ->", actual)
-        # Paso 6: Colocamos el vértice actual en la lista de visitados
+        # Colocamos el vértice actual en la lista de visitados
         visitados.append(actual)
-        # Paso 7: Para cada vértice que el vértice actual tiene como destino
+        # Para cada vértice que el vértice actual tiene como destino
         for key, _ in grafo[actual]:
             # Encolamos el vértice si no ha sido visitado
             if key not in visitados:
